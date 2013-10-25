@@ -12,15 +12,12 @@ import java.util.List;
 public class RecordReader {
 
 	private String fileName = "c:\\wip\\invoiceItems.txt";
-	private static List<InvoiceItem> listOfInvoices = new ArrayList<InvoiceItem>();
+	//private static List<InvoiceItem> listOfInvoices = new ArrayList<InvoiceItem>();
 	
-	public List<InvoiceItem> getListOfInvoices() {
-		return listOfInvoices;
-	}
+	//public List<InvoiceItem> getListOfInvoices() {
+	//	return listOfInvoices;
+	//}
 
-	public void setListOfInvoices(List<InvoiceItem> listOfInvoices) {
-		this.listOfInvoices = listOfInvoices;
-	}
 	
 	public void readRecords() throws IOException{
 		 FileInputStream fstream = new FileInputStream(fileName);
@@ -38,8 +35,7 @@ public class RecordReader {
 			  }
 			  
 			  String[] lineSplit = strLine.split(",");
-			  listOfInvoices.add(new InvoiceItem(Integer.parseInt(lineSplit[0]),
-					  Double.parseDouble(lineSplit[1]),lineSplit[2]));
+			  //listOfInvoices.add(new InvoiceItem(Integer.parseInt(lineSplit[0]), Double.parseDouble(lineSplit[1]),lineSplit[2]));
 			  RollupList.addInvoiceItem(new InvoiceItem(Integer.parseInt(lineSplit[0]),
 					  Double.parseDouble(lineSplit[1]),lineSplit[2]));
 		  }
@@ -47,10 +43,11 @@ public class RecordReader {
 		  in.close();
 	}
 
+	/*
 	public void printList(){
 		for(InvoiceItem i : listOfInvoices){
 			System.out.println(i.toString());
 		}
 		
-	}
+	}*/
 }
